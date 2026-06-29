@@ -1,0 +1,393 @@
+/* ========================================
+   RESET
+======================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+:root {
+    --verde-escuro: #1a6b3c;
+    --verde-medio: #218a4e;
+    --verde-claro: #e8f5ee;
+    --verde-badge: #d1f0de;
+    --vermelho-badge: #fde8e8;
+    --texto-badge-verde: #1a6b3c;
+    --texto-badge-vermelho: #c0392b;
+    --cinza-fundo: #f0f4f7;
+    --cinza-borda: #e2e8f0;
+    --cinza-label: #64748b;
+    --cinza-placeholder: #94a3b8;
+    --texto-principal: #1e293b;
+    --texto-secundario: #475569;
+    --branco: #ffffff;
+    --sombra: 0 1px 4px rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.05);
+    --radius: 10px;
+    --radius-sm: 6px;
+}
+
+/* ========================================
+   BASE
+======================================== */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--texto-principal);
+    font-size: 14px;
+    min-height: 100vh;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+.header {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 0 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.header p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-left: 4px;
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+======================================== */
+.container {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========================================
+   CARDS
+======================================== */
+.card {
+    background-color: var(--branco);
+    border-radius: var(--radius);
+    box-shadow: var(--sombra);
+    padding: 24px 28px;
+    border: 1px solid var(--cinza-borda);
+}
+
+.card h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--texto-principal);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--cinza-borda);
+}
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+#form-cliente {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+#form-cliente .btn-cadastrar {
+    grid-column: 1 / -1;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cinza-label);
+}
+
+.form-grupo input,
+.form-grupo select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--texto-principal);
+    background-color: var(--branco);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-grupo input::placeholder {
+    color: var(--cinza-placeholder);
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 3px rgba(33, 138, 78, 0.12);
+}
+
+/* ========================================
+   BOTÃO CADASTRAR
+======================================== */
+.btn-cadastrar {
+    height: 42px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-cadastrar:hover {
+    background-color: var(--verde-medio);
+}
+
+.btn-cadastrar:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   BUSCA E FILTRO
+======================================== */
+.busca-filtros {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 16px;
+}
+
+/* ========================================
+   RESUMO
+======================================== */
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.resumo-item {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--radius);
+    box-shadow: var(--sombra);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-left: 4px solid var(--cinza-borda);
+}
+
+.resumo-item.resumo-ativo {
+    border-left-color: var(--verde-escuro);
+}
+
+.resumo-item.resumo-inativo {
+    border-left-color: #e74c3c;
+}
+
+.resumo-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cinza-label);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.resumo-valor {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--texto-principal);
+    line-height: 1;
+}
+
+.resumo-ativo .resumo-valor {
+    color: var(--verde-escuro);
+}
+
+.resumo-inativo .resumo-valor {
+    color: #e74c3c;
+}
+
+/* ========================================
+   LISTA DE CLIENTES
+======================================== */
+#lista-clientes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cliente-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--radius-sm);
+    background-color: var(--branco);
+    transition: box-shadow 0.2s;
+}
+
+.cliente-item:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cliente-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cliente-nome {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.cliente-detalhes {
+    font-size: 13px;
+    color: var(--texto-secundario);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.cliente-acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   BADGE DE STATUS
+======================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.badge-ativo {
+    background-color: var(--verde-badge);
+    color: var(--texto-badge-verde);
+}
+
+.badge-inativo {
+    background-color: var(--vermelho-badge);
+    color: var(--texto-badge-vermelho);
+}
+
+/* ========================================
+   BOTÃO EXCLUIR
+======================================== */
+.btn-excluir {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    background-color: transparent;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-excluir:hover {
+    background-color: #e74c3c;
+    color: var(--branco);
+}
+
+/* ========================================
+   LISTA VAZIA
+======================================== */
+.lista-vazia {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--cinza-label);
+    font-size: 14px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+@media (max-width: 680px) {
+    .header {
+        padding: 0 16px;
+        height: 54px;
+    }
+
+    .header p {
+        display: none;
+    }
+
+    .container {
+        margin: 16px auto;
+        padding: 0 12px;
+        gap: 14px;
+    }
+
+    .card {
+        padding: 18px 16px;
+    }
+
+    #form-cliente {
+        grid-template-columns: 1fr;
+    }
+
+    .busca-filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .cliente-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cliente-acoes {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

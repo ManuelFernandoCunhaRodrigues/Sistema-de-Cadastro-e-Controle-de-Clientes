@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Clientes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Sistema de Clientes</h1>
+        <p>Gerencie seus clientes de forma simples e rápida</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Formulário de cadastro -->
+        <section class="card">
+            <h2>Cadastrar Cliente</h2>
+            <form id="form-cliente">
+                <div class="form-grupo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Nome completo" />
+                </div>
+                <div class="form-grupo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="email@exemplo.com" />
+                </div>
+                <div class="form-grupo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" placeholder="(00) 00000-0000" />
+                </div>
+                <div class="form-grupo">
+                    <label for="documento">Documento</label>
+                    <input type="text" id="documento" placeholder="CPF ou CNPJ" />
+                </div>
+                <div class="form-grupo">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Busca e filtro -->
+        <section class="card">
+            <h2>Buscar Clientes</h2>
+            <div class="busca-filtros">
+                <div class="form-grupo">
+                    <label for="busca">Buscar por nome</label>
+                    <input type="text" id="busca" placeholder="Digite um nome..." />
+                </div>
+                <div class="form-grupo">
+                    <label for="filtro-status">Filtrar por status</label>
+                    <select id="filtro-status">
+                        <option value="todos">Todos</option>
+                        <option value="ativo">Ativos</option>
+                        <option value="inativo">Inativos</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumo -->
+        <section class="resumo">
+            <div class="resumo-item">
+                <span class="resumo-label">Total</span>
+                <span class="resumo-valor" id="total-clientes">0</span>
+            </div>
+            <div class="resumo-item resumo-ativo">
+                <span class="resumo-label">Ativos</span>
+                <span class="resumo-valor" id="total-ativos">0</span>
+            </div>
+            <div class="resumo-item resumo-inativo">
+                <span class="resumo-label">Inativos</span>
+                <span class="resumo-valor" id="total-inativos">0</span>
+            </div>
+        </section>
+
+        <!-- Listagem de clientes -->
+        <section class="card">
+            <h2>Clientes Cadastrados</h2>
+            <ul id="lista-clientes"></ul>
+        </section>
+
+    </main>
+
+    <script src="./js/mascaras.js"></script>
+</body>
+
+</html>
