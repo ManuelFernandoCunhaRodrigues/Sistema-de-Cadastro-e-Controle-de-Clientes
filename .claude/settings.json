@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git checkout -b feat/estrutura-visual-e-mascaras)",
+      "PowerShell(git add index.html css/style.css js/mascaras.js js/main.js)",
+      "PowerShell(git rm js/app.js)",
+      "PowerShell(git add -u js/app.js)",
+      "PowerShell(git push origin feat/estrutura-visual-e-mascaras)",
+      "Bash(Get-ChildItem js/utils/)",
+      "Bash(Get-ChildItem js/views/)"
+    ]
+  }
+}

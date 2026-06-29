@@ -4,7 +4,7 @@ export let nome = document.querySelector('#nome')
 export let email = document.querySelector('#email')
 export let telefone = document.querySelector('#telefone')
 export let documento = document.querySelector('#documento')
-export let status = document.querySelector('#status')
+export let statusCliente = document.querySelector('#status')
 
 // DOM Buscar Clientes
 export let nomeBusca = document.querySelector('#busca')
