@@ -1,3 +1,18 @@
+/**
+Esse arquivo cuida da tela.
+
+Ele deve:
+
+Capturar os inputs do HTML
+Pegar os dados digitados
+Limpar o formulário
+Renderizar clientes na tela
+Atualizar totais
+Mostrar mensagens
+Registrar eventos de clique, submit, input e change
+
+ */
+
 
 // DOM Cadastrar Cliente
 export let nome = document.querySelector('#nome')

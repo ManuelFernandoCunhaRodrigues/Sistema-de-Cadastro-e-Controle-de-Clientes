@@ -1,4 +1,21 @@
-import { Cliente } from "./models/cliente.js";
+/**
+ * Esse arquivo só inicia a aplicação.
+
+Ele deve importar as classes, criar os objetos e conectar tudo.
+
+A ideia dele é:
+
+Criar Repository
+Criar Service passando Repository
+Criar View
+Criar Controller passando Service e View
+Iniciar Controller
+
+O main.js não deve ter regra de cadastro, DOM ou validação.
+ */
+
+
+import { Cliente } from "./models/Cliente.js";
 
 const clienteTeste = new Cliente(
     "João Silva",
